@@ -10,12 +10,14 @@ const TodoElement = (props) => {
     const listItemStyle = {
         display: 'inline-block',
         marginLeft: '10px',
-        color: isChecked ? 'green' : 'black',
+        color: isChecked ? 'grey' : 'black',
+        textDecoration: isChecked ? 'line-through': 'none',
     };
 
+
     return (
-        <div style={{ display: 'flex', alignItems: 'center', gap: '15px'}}>
-            <form>
+        <div className="todoElement" >
+            <form className="form" >
                 <input
                     type="checkbox"
                     name="isDone"
@@ -24,10 +26,10 @@ const TodoElement = (props) => {
                     onChange={handleCheckboxChange}
                 />
             </form>
-            <li style={listItemStyle}>
+            <li className="messageElement" style={listItemStyle}>
                 {props.text}
             </li>
-            <button onClick={props.deleteItem}>
+            <button className="deleteElement" onClick={props.deleteItem}>
                 Delete
             </button>
         </div>

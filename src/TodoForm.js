@@ -13,13 +13,13 @@ function TodoForm({ addTodo }) {
 
     return (
         <form onSubmit={handleSubmit}>
-            <input
+            <input className="submitForm"
                 type="text"
                 value={text}
                 onChange={(e) => setText(e.target.value)}
-                placeholder="Введите текст"
+                placeholder="Add new todo"
             />
-            <button type="submit">Добавить</button>
+            <button type="submit" className="submitButton">+Add</button>
         </form>
     );
 }
